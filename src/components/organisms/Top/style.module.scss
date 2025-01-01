@@ -4,6 +4,13 @@
 .Top {
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+
+  &--displayed {
+    opacity: 1;
+  }
 
   & .Top__text {
     position: fixed;

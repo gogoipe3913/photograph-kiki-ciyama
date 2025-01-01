@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Top from "../organisms/Top";
 import style from "./style.module.scss";
+import Loading from "../atoms/Loading";
 
 const Templates: React.FC = () => {
   // ファーストビューのステータス
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className={style.Templates}>
-      <div className={style.Templates__mainColumn}>
+    <>
+      <Loading isLoadedFirstImage={isLoaded} />
+      <div className={style.Templates}>
         <Top
           isLoaded={isLoaded}
           onLoadData={() => {
@@ -17,7 +19,7 @@ const Templates: React.FC = () => {
           className={style.Templates__top}
         />
       </div>
-    </div>
+    </>
   );
 };
 

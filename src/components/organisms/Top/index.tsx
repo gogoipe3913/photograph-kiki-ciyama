@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import style from "./style.module.scss";
 import classNames from "classnames";
 import { FadeInContainer } from "../../atoms/FadeInContainer";
@@ -31,9 +31,31 @@ type TopProps = {
   className?: string;
 };
 
-const Top: React.FC<TopProps> = ({ className = "" }) => {
+const Top: React.FC<TopProps> = ({ onLoadData = () => {}, className = "" }) => {
+  const [loadedImages, setLoadedImages] = useState(0);
+  const totalImages = images.length;
+
+  const handleImageLoad = () => {
+    setLoadedImages((prevCount) => prevCount + 1);
+  };
+
+  const allImagesLoaded = loadedImages === totalImages;
+
+  useEffect(() => {
+    if (allImagesLoaded) {
+      onLoadData();
+    }
+  }, [allImagesLoaded]);
+
   return (
-    <div id="Top" className={classNames(style.Top, className)}>
+    <div
+      id="Top"
+      className={classNames(
+        style.Top,
+        allImagesLoaded ? style["Top--displayed"] : "",
+        className
+      )}
+    >
       <div className={style.Top__text}>
         <h1>Taiki Kishiyama</h1>
         <p>
@@ -49,11 +71,21 @@ const Top: React.FC<TopProps> = ({ className = "" }) => {
           photography work.
         </p>
       </div>
+      {!allImagesLoaded && (
+        <div>
+          Loading images... {loadedImages}/{totalImages}
+        </div>
+      )}
       <ul className={style.Top__photoList}>
         {images.map((image, index) => (
-          <FadeInContainer>
-            <li key={index} className={style.Top__photo}>
-              <img width={375} src={image} alt={`${index}枚目の写真画像`} />
+          <FadeInContainer key={index}>
+            <li className={style.Top__photo}>
+              <img
+                width={375}
+                src={image}
+                alt={`${index}枚目の写真画像`}
+                onLoad={handleImageLoad}
+              />
             </li>
           </FadeInContainer>
         ))}

@@ -1,4 +1,4 @@
-@use "../../../style/variables.scss";
+@use "../../../style/variables.scss" as v;
 @use "../../../style/mixin.scss";
 
 .Loading {
@@ -10,8 +10,8 @@
   align-items: center;
   width: 100vw;
   height: 100svh;
-  background-color: $global-color-background;
-  z-index: $global-elevation-4;
+  background-color: v.$global-color-background;
+  z-index: v.$global-elevation-4;
   // transition
   transition-timing-function: ease-in;
   transition-duration: 0.3s;
@@ -35,17 +35,21 @@
   .Loading__logo {
     width: 200px;
     display: block;
+
+    p {
+      font-size: 28px;
+    }
   }
 }
 
 @keyframes gradientShift {
   0% {
-    color: $font-color-black;
+    color: v.$font-color-black;
   }
   50% {
-    color: $font-color-hover;
+    color: v.$font-color-hover;
   }
   100% {
-    color: $font-color-black;
+    color: v.$font-color-black;
   }
 }

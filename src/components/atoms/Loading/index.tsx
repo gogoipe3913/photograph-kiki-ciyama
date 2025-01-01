@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import classNames from "classnames";
-import LogoMain from "../LogoMain";
 
 type LoadingProps = {
   isLoadedFirstImage: boolean;
@@ -31,7 +30,7 @@ const Loading: React.FC<LoadingProps> = ({ isLoadedFirstImage }) => {
     >
       <div className={style.Loading__logoWrapper}>
         <div className={style.Loading__logo}>
-          <LogoMain />
+          <p>Taiki Kishiyama</p>
         </div>
         <p>Loading...</p>
       </div>
