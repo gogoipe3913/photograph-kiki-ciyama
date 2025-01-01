@@ -71,11 +71,6 @@ const Top: React.FC<TopProps> = ({ onLoadData = () => {}, className = "" }) => {
           photography work.
         </p>
       </div>
-      {!allImagesLoaded && (
-        <div>
-          Loading images... {loadedImages}/{totalImages}
-        </div>
-      )}
       <ul className={style.Top__photoList}>
         {images.map((image, index) => (
           <FadeInContainer key={index}>
