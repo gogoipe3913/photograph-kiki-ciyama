@@ -1,10 +1,39 @@
-@import "../../../style/variables.scss";
-@import "../../../style/mixin.scss";
+@use "../../../style/variables.scss";
+@use "../../../style/mixin.scss";
 
 .Top {
-  .Top__photoList {
+  display: flex;
+  justify-content: space-between;
+
+  & .Top__text {
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    text-align: left;
+
+    & h1 {
+      font-size: 17px;
+    }
+
+    & p {
+      margin-top: 20px;
+      max-width: 400px;
+      font-size: 13px;
+    }
+  }
+
+  & .Top__photoList {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 8px;
+    margin-left: auto;
+    width: 80%;
+    max-width: 680px;
+  }
+
+  & .Top__photo {
+    & img {
+      width: 100%;
+    }
   }
 }

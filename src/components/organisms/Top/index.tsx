@@ -33,19 +33,32 @@ type TopProps = {
 
 const Top: React.FC<TopProps> = ({ className = "" }) => {
   return (
-    <FadeInContainer>
-      <div id="Top" className={classNames(style.Top, className)}>
-        <ul className={style.Top__photoList}>
-          {images.map((image, index) => (
-            <FadeInContainer>
-              <li key={index} className={style.Top__photo}>
-                <img src={image} alt={`${index}枚目の写真画像`} />
-              </li>
-            </FadeInContainer>
-          ))}
-        </ul>
+    <div id="Top" className={classNames(style.Top, className)}>
+      <div className={style.Top__text}>
+        <h1>Taiki Kishiyama</h1>
+        <p>
+          Born in Shizuoka Prefecture in 1994, Taiki Kishiyama taught himself
+          graphic and web design during his university years, which led him to
+          discover photographic expression. After working for several companies,
+          he now operates as a freelance designer based in Tokyo and Kyoto.
+          While maintaining his practice in graphic design, web design, and web
+          development, he began creating personal work primarily using film
+          cameras in 2021. His artistic practice focuses on personal memories
+          and emotions that are often overlooked and forgotten in daily life,
+          capturing them from a perspective distinct from his commercial
+          photography work.
+        </p>
       </div>
-    </FadeInContainer>
+      <ul className={style.Top__photoList}>
+        {images.map((image, index) => (
+          <FadeInContainer>
+            <li key={index} className={style.Top__photo}>
+              <img width={375} src={image} alt={`${index}枚目の写真画像`} />
+            </li>
+          </FadeInContainer>
+        ))}
+      </ul>
+    </div>
   );
 };
 
