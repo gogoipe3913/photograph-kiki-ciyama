@@ -20,7 +20,7 @@ export const FadeInContainer: React.FC<FadeInContainerProps> = ({
    * 「triggerOnce」検知を一度だけ行うかどうか
    */
   const { ref, inView } = useInView({
-    rootMargin: "-8%",
+    rootMargin: "0",
     triggerOnce: true,
   });
 
