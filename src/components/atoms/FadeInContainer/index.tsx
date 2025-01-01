@@ -1,4 +1,6 @@
 import React, { ReactNode } from "react";
+// スマートフォンの実機ポリフィル
+import "intersection-observer";
 import { useInView } from "react-intersection-observer";
 import style from "./style.module.scss";
 import classNames from "classnames";
