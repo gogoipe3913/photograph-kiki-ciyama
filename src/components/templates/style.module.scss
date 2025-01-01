@@ -1,6 +1,11 @@
 @use "../../style/variables.scss";
-@use "../../style/mixin.scss";
+@use "../../style/mixin.scss" as m;
 
 .Templates {
   padding: 20px;
+  min-width: 1240px;
+
+  @include m.respondToSm {
+    min-width: initial;
+  }
 }

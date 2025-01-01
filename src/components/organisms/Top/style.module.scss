@@ -1,5 +1,5 @@
 @use "../../../style/variables.scss";
-@use "../../../style/mixin.scss";
+@use "../../../style/mixin.scss" as m;
 
 .Top {
   display: flex;
@@ -11,14 +11,27 @@
     left: 60px;
     text-align: left;
 
+    @include m.respondToSm {
+      top: 28px;
+      left: 20px;
+    }
+
     & h1 {
       font-size: 17px;
+
+      @include m.respondToSm {
+        line-height: 1;
+      }
     }
 
     & p {
       margin-top: 20px;
       max-width: 400px;
       font-size: 13px;
+
+      @include m.respondToSm {
+        display: none;
+      }
     }
   }
 
@@ -29,6 +42,12 @@
     margin-left: auto;
     width: 80%;
     max-width: 680px;
+
+    @include m.respondToSm {
+      max-width: initial;
+      width: 100%;
+      padding-top: 50%;
+    }
   }
 
   & .Top__photo {
