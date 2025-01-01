@@ -1,0 +1,16 @@
+@import "../../style/variables.scss";
+@import "../../style/mixin.scss";
+
+.Templates {
+  position: relative;
+  padding: 0 60px;
+  display: flex;
+
+  margin: 0 auto;
+  max-width: 1440px;
+
+  @include respondToSm {
+    display: initial;
+    padding: 0 20px;
+  }
+}

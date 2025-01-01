@@ -1,0 +1,12 @@
+@import "./style/_reset";
+@import "./style/variables.scss";
+
+body {
+  // フォントデフォルト設定
+  color: $font-color-black;
+  font-family: "mr-eaves-modern", "dnp-shuei-gothic-gin-std", sans-serif;
+}
+
+a {
+  color: $font-color-black;
+}
