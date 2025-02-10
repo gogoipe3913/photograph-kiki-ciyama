@@ -30,7 +30,7 @@ const Loading: React.FC<LoadingProps> = ({ isLoadedFirstImage }) => {
     >
       <div className={style.Loading__logoWrapper}>
         <div className={style.Loading__logo}>
-          <p>Taiki Kishiyama</p>
+          <p>Taiki Kishiyama Photograph</p>
         </div>
         <p>Loading...</p>
       </div>

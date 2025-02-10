@@ -23,6 +23,13 @@ const images: string[] = [
   "/images/spoon/spoon_17.webp",
   "/images/spoon/spoon_18.webp",
   "/images/spoon/spoon_19.webp",
+  "/images/spoon/spoon_20.webp",
+  "/images/spoon/spoon_21.webp",
+  "/images/spoon/spoon_22.webp",
+  "/images/spoon/spoon_23.webp",
+  "/images/spoon/spoon_24.webp",
+  "/images/spoon/spoon_25.webp",
+  "/images/spoon/spoon_26.webp",
 ];
 
 type TopProps = {
