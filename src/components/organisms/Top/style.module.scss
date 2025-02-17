@@ -12,6 +12,10 @@
     opacity: 1;
   }
 
+  @include m.respondToSm {
+    flex-direction: column;
+  }
+
   & .Top__text {
     position: fixed;
     top: 60px;
@@ -78,6 +82,26 @@
   & .Top__photo {
     & img {
       width: 100%;
+    }
+  }
+
+  & .Top__textSp {
+    display: none;
+    padding-bottom: 32px;
+
+    @include m.respondToSm {
+      margin-top: 100px;
+      display: initial;
+      height: fit-content;
+      text-align: left;
+    }
+
+    & .Top__textJa {
+      margin-top: 80px;
+      width: 100%;
+      font-size: 12px;
+      line-height: 2.2;
+      white-space: pre-line;
     }
   }
 }
