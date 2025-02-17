@@ -17,6 +17,7 @@
     top: 60px;
     left: 60px;
     text-align: left;
+    height: calc(100svh - 60px - 60px);
 
     @include m.respondToSm {
       top: 28px;
@@ -31,10 +32,27 @@
       }
     }
 
-    & p {
+    & .Top__textBody {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    & .Top__textProfileEn {
       margin-top: 20px;
       max-width: 400px;
       font-size: 13px;
+
+      @include m.respondToSm {
+        display: none;
+      }
+    }
+
+    & .Top__textJa {
+      margin-top: auto;
+      max-width: 400px;
+      font-size: 12px;
+      line-height: 2;
 
       @include m.respondToSm {
         display: none;
